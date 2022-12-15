@@ -1,4 +1,4 @@
-from .serializers import TutorialSerializer
+from ..serializers import TutorialSerializer
 from unittest.mock import patch
 
 @patch("operations.serializers.TutorialSerializer.Meta")

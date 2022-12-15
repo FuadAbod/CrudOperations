@@ -1,7 +1,7 @@
 # from django.test import TestCase
 
 # Create your tests here.
-from .models import Tutorial
+from operations.models import Tutorial
 import pytest
 
 @pytest.mark.django_db

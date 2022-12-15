@@ -60,6 +60,12 @@ coverage.xml
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+venv
+.pytest_cache
+.vscode/
+.DS_Store
+*.sqlite3
+
 
 # Flask stuff:
 instance/
