@@ -2,29 +2,17 @@ from rest_framework.test import APIClient
 from django.urls import reverse
 import pytest
 from ..models import Tutorial
+import sqlite3
 
 @pytest.fixture
 def create_api_connection():
     client = APIClient()
     return client
 
-
 @pytest.fixture
-def create_dummy_data(create_api_connection):
-    data = {
-        "title": "Python&ReACT",
-        "description": "OOP",
-        "published": True
-    }
-    respone = create_api_connection.post(reverse('tutorial_list'),data=data, format='json')
-    return respone.json()
+def create_sample_data(db):
+    first_tutorial = Tutorial(title='LOTR', description= 'sjncs', published = True)
+    second_tutorial= Tutorial(title='LOTR', description= 'Film', published = False)
+    first_tutorial.save()
+    second_tutorial.save()
 
-@pytest.fixture
-def mock_sqlite_database():
-    Tutorial.create
-    mock_model= Tutorial(
-        title="XXX",
-        description = "YYY",
-        published = True
-    )
-    return mock_model
